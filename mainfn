@@ -1,0 +1,62 @@
+package mainfn;
+import java.util.Scanner;
+import student.*;
+public class mainfn {
+    public static void main(String[] args) {
+        
+       try{
+        student[] students = new student[100];
+        int studentCounter = 0;
+        int ch = 0;
+        int i;
+        do{
+              
+                  System.out.println("MAIN MENU");
+              System.out.println("1. Enter Details\n2.Admit student\n3.Exit");
+              System.out.println("Enter your choice: ");
+              Scanner scan = new Scanner(System.in);
+              ch = scan.nextInt();
+              switch(ch){
+                  
+                  case 1: System.out.println("Enter no of students details you wish to enter");
+                            Scanner sc = new Scanner(System.in);
+                            int x = 0;
+                            x = sc.nextInt();
+                            for(i=studentCounter;i<studentCounter+x;i++){
+                                students[i] = new student();
+                                students[i].getdata();}
+                            studentCounter += x;
+                           break;
+                  case 2: int flag =0;
+                         Scanner s = new Scanner(System.in);
+                        Scanner scanSTR = new Scanner(System.in);
+                        int a;
+                        String str;
+                        System.out.println("Enter The AUD : ");
+                        a = s.nextInt();
+                        for(i=0;i<studentCounter;i++){
+                         if(a == students[i].getAUD()){
+                            students[i].display();
+                              System.out.println("Enter Your Sport : ");
+                              str = scanSTR.nextLine();
+                             students[i].setSport(str);
+                                System.out.println("Admitted!");
+                                flag = 1;
+                    }
+                    
+                    }
+                        if (flag==0){
+                        System.out.println("Student not found");}
+                        break;
+                    case 3: System.out.println("Exiting program\n");
+                            break;
+                  default: System.out.println("Wrong choice entered");        
+            }
+            }
+      while(ch!=3);
+    }
+       catch(Exception e){
+           System.out.println("An exception occured");
+       }
+    }
+}
