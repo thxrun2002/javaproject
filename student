@@ -1,0 +1,45 @@
+package student;
+import java.util.Scanner;
+public class student {
+    String name;
+    int AUD;
+    int age;
+    String course;
+    String Sport;
+    public student(){
+        name = "";
+        age = 0;
+        AUD= 0;
+        course = "";
+        Sport = "";
+    }
+    public void getdata(){
+     Scanner scan = new Scanner(System.in);
+        Scanner scanSTR = new Scanner(System.in);
+        System.out.println("Enter AUD: ");
+        AUD = scan.nextInt();
+        System.out.println("Enter name: ");
+        name = scanSTR.nextLine();
+        System.out.println("Enter Course: ");
+        course = scanSTR.nextLine();
+        System.out.println("Enter age: ");
+        age = scan.nextInt();
+    }
+    
+    
+    public void setSport(String s){
+        Sport = s;
+    }
+    
+    public void display(){
+        System.out.println("Name : "+name);
+        System.out.println("AUD : "+AUD);
+        System.out.println("Course: "+course);
+    }
+        
+
+    public int getAUD() {
+        return AUD; 
+    }
+        }    
+           
